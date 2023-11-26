@@ -1,0 +1,174 @@
+{% extends "hub/base.html" %}
+
+{% block content %}
+  <!-- breadcrumb -->
+<section class="about-breadcrumb text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-5" style="background-image: url('{{info.background_image.url}}');">
+      <div class="container py-lg-5 py-md-4">
+        <div class="w3breadcrumb-gids">
+          <div class="w3breadcrumb-left text-left">
+                    <h2 class="title AboutPageBanner">
+                  About Us   </h2>
+                              <p class="inner-page-para mt-2">
+                                {{info.about_us_title_sub_text}}           </p>
+          </div>
+          <div class="w3breadcrumb-right">
+                <ul class="breadcrumbs-custom-path">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active"><span class="fas fa-angle-double-right mx-2"></span> About Us</li>
+                </ul>
+          </div>
+    </div>
+      </div>
+      <div class="hero-overlay"></div>
+  </div>
+</section>
+<!--//breadcrumb-->
+<!--/aboutblock1-->
+  <section class="aboutblock1" id="about">
+    <div class="midd-w3 py-5">
+      <div class="container py-lg-5 py-md-4 py-2">
+        <div class="row">
+          <div class="col-lg-6 left-wthree-img pr-lg-5">
+            <div class="position-relative">
+              <img src="{{info.about_us_introduction_image.url}}"
+                alt="" class="img-fluid radius-image">
+              </div>
+            </div>
+          <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self">
+            <h5 class="title-subw3hny mb-1">About Us</h5>
+            <h3 class="title-w3l">{{info.about_us_introduction_title}}</h3>
+            <p class="mt-4">{{info.about_us_introduction_subtext}}</p>
+            <a class="btn btn-primary btn-style mt-md-5 mt-4 mr-md-4 mr-3" href="#url">
+              Read More </a>
+          </div>
+        </div>
+        <!--/Features-->
+        <div class="row justify-content-center mt-5 pt-lg-5 AboutFeatures">
+          <div class="col-lg-4 col-md-6 grids-feature">
+            <div class="area-box">
+              <i class="fas fa-theater-masks" aria-hidden="true"></i>
+              <div class="area-box-info">
+                <h4><a href="#url" class="title-head">
+                  Mission</a></h4>
+                    <p>{{info.mission}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+            <div class="area-box">
+              <i class="fas fa-hands-wash" aria-hidden="true"></i>
+              <div class="area-box-info">
+                <h4><a href="#url" class="title-head">
+                  Vision</a></h4>
+                    <p>{{info.vision}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+            <div class="area-box">
+              <i class="fas fa-people-arrows" aria-hidden="true"></i>
+              <div class="area-box-info">
+                <h4><a href="#url" class="title-head">
+                  Goal</a></h4>
+                    <p>{{info.goal}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <!--//Features-->
+      </div>
+    </div>
+  </section>
+  <!--//aboutblock1-->
+   <!--/team-sec-->
+   <section class="team-main team py-5" id="team">
+    <div class="container py-lg-5">
+      <h5 class="title-subw3hny mb-1 text-center">Our Team</h5>
+      <h3 class="title-w3l text-center">Amazing Team</h3>
+      <div class="row team-row mt-md-5 mt-4">
+
+        {% for member in team %}
+        <div class="col-lg-4 col-6 team-wrap">
+          <div class="team-member text-center">
+            <div class="team-img">
+              <img src="{{member.image.url}}" alt="" class="radius-image">
+              <div class="overlay-team">
+                <div class="team-details text-center">
+                  <div class="socials mt-20">
+                    <a href="#url">
+                      <span class="fab fa-facebook-f"></span>
+                    </a>
+                    <a href="#url">
+                      <span class="fab fa-twitter"></span>
+                    </a>
+                    <a href="#url">
+                      <span class="fab fa-linkedin-in"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#url" class="team-title">{{member.name}}</a>
+            <p>{{member.position}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- end team member -->
+
+      </div>
+  </section>
+  <!--//team-sec-->
+  <!--/about2-->
+  <section class="about2 py-5">
+    <div class="container py-lg-5 py-md-4 py-2 AboutPageStats">
+      <div class="row cwp23-content align-items-center">
+        <div class="col-lg-6 pr-lg-5">
+          <h5 class="title-subw3hny mb-3">Why Choose Us</h5>
+          <h3 class="title-w3l">Our Objectives.</h3>
+          
+          <ul class="service-list pt-lg-2 mt-4">
+            {% for obj in objs %}
+              <li class="service-link"><a href="#url"><span class="fas fa-check"></span> {{obj.objective}}.</a></li>
+            {% endfor %}
+            <li class="service-link"><a href="#url"><span class="fas fa-check"></span> Cover your mouth and nose when coughing.</a></li>
+            <li class="service-link"><a href="#url"><span class="fas fa-check"></span> Stay home if you feel unwell.</a></li>
+          </ul>
+
+
+        </div>
+        <div class="col-lg-6 col-6 cwp23-text align-self mt-lg-0 mt-5 pr-md-3 pr-2">
+          <img src="{{info.about_us_objectives_image.url}}" alt=""
+            class="radius-image img-fluid">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+ <!--//about2-->
+  <!--/project-->
+  <section class="project-main py-5">
+    <div class="container py-md-5 py-2">
+      <div class="project-in">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="bottom-info">
+              <div class="header-section pr-lg-5">
+                <h5 class="title-subw3hny mb-3">Free Consultation</h5>
+                <h3 class="title-w3l mb-3">Request Free Consultation <br>and <span class="span-bold">Lets Do It!</span>
+                </h3>
+                <p>{{info.consultation_sub_text}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 align-self text-lg-right mt-lg-0 mt-sm-5 mt-4">
+            <a href="#" class="btn btn-primary btn-white  btn-style mr-2"> Contact Now </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--//project-->
+
+
+{% endblock content %}

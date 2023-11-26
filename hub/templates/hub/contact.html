@@ -1,0 +1,109 @@
+{% extends "hub/base.html" %}
+
+{% block content %}
+<!-- breadcrumb -->
+<section class="about-breadcrumb text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-5" style="background-image: url('{{info.background_image.url}}');">
+      <div class="container py-lg-5 py-md-4">
+        <div class="w3breadcrumb-gids">
+          <div class="w3breadcrumb-left text-left">
+                    <h2 class="title AboutPageBanner">
+                Contact Us   </h2>
+                              <p class="inner-page-para mt-2">
+                                {{info.contact_us_title_sub_text}} </p>
+          </div>
+          <div class="w3breadcrumb-right">
+                <ul class="breadcrumbs-custom-path">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active"><span class="fas fa-angle-double-right mx-2"></span> Contact Us</li>
+                </ul>
+          </div>
+    </div>
+      </div>
+      <div class="hero-overlay"></div>
+  </div>
+</section>
+<!--//breadcrumb-->
+ <!-- contact-form 2 -->
+ <section class="contact-2 py-5" id="contact">
+  <div class="container py-lg-4 py-md-3 py-2">
+    {% if message %}
+      <div class="alert alert-info">{{message}}</div>
+    {% endif %}
+
+    {% if error %}
+      <div class="alert alert-danger">{{error}}</div>
+    {% endif %}
+
+    <div class="title-content text-center">
+      <span class="title-subw3hny">Get in touch</span>
+      <h3 class="title-w3l mb-lg-4">Contact with our support <br>
+        during emergency!</h3>
+
+    </div>
+    <div class="contact-grids d-grid mt-5 mx-lg-5">
+      <div class="contact-left">
+        <div class="cont-details">
+          <div class="cont-top margin-up">
+            <div class="cont-left text-center">
+              <span class="fas fa-map-marked-alt"></span>
+            </div>
+            <div class="cont-right">
+              <h6>Our support address:</h6>
+              <p>{{info.address}}</p>
+            </div>
+          </div>
+          <div class="cont-top margin-up">
+            <div class="cont-left text-center">
+              <span class="fas fa-blender-phone"></span>
+            </div>
+            <div class="cont-right">
+              <h6>Call for help :</h6>
+              <p><a href="tel:+1(21) 234 4567">{{info.contact_phone}}</a></p>
+              <p><a href="tel:+1(21) 234 4567">{{info.contact_fax}}</a></p>
+            </div>
+          </div>
+          <div class="cont-top margin-up">
+            <div class="cont-left text-center">
+              <span class="fas fa-envelope-open-text"></span>
+            </div>
+            <div class="cont-right">
+              <h6>
+                Mail us:</h6>
+              <p><a href="mailto:support@mail.com" class="mail">{{info.contact_mail}}</a></p>
+              {% comment %} <p><a href="mailto:contact@mail.com" class="mail">contact@mail.com</a></p> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form action="#" method="post" class="signin-form">
+          {% csrf_token %}
+          <div class="input-grids">
+            <input type="text" name="name" placeholder="Your Name*" class="contact-input"
+              required="" />
+            <input type="email" name="email" placeholder="Your Email*" class="contact-input"
+              required="" />
+            <input type="text" name="subject" placeholder="Subject*" class="contact-input"
+              required="" />
+          </div>
+          <div class="form-input">
+            <textarea name="message" placeholder="Type your message here*" required=""></textarea>
+          </div>
+          <div class="submit-button text-lg-right">
+              <button type="submit" class="btn btn-style btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</section>
+<!-- /contact-form-2 -->
+<div class="map-iframe">
+  <iframe
+      src="{{info.map_link}}"
+      width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
+</div>
+  <!-- /contact1 -->
+
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "kb_helath_hub/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "kb_helath_hub/wsgi.py"
+      }
+    ]
+}
