@@ -12,6 +12,7 @@ class Home_Page_Info(models.Model):
     home_page_intro_sub_title = models.TextField(null=True)
     home_page_intro_image1 = models.ImageField(upload_to='settings', default='default.jpg')
     home_page_intro_image2 = models.ImageField(upload_to='settings', default='default.jpg')
+    home_page_map_image = models.ImageField(upload_to='settings', default='default.jpg')
 
     advice_title = models.CharField(max_length=200)
     advice_sub_text = models.TextField()
